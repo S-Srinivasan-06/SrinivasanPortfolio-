@@ -1,16 +1,39 @@
-# React + Vite
+# SrinivasanPortfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-performance, visually stunning portfolio built with **React**, **Vite**, and **Framer Motion**.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Zentry-Inspired Hero Section**: A sophisticated, scroll-driven reveal animation featuring "Rune" overlays and Matrix-style terminal curtains.
+- **Dynamic Backgrounds**: Utilizes premium WebGL backgrounds (Balatro & FaultyTerminal) for an immersive experience.
+- **Interactive Tech Stack**: A custom-built, auto-expanding tech stack visualization with physics-based dragging and smooth scroll transitions.
+- **Premium Aesthetics**: Dark mode design with curated neon accents, custom typography, and glassmorphism effects.
+- **Responsive & Optimized**: Fully responsive layout with smooth performance across all devices.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React.js, Vite
+- **Animations**: Framer Motion, GSAP
+- **Styling**: Vanilla CSS, Modern CSS features
+- **Graphics**: OGL (WebGL framework)
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/YourUsername/SrinivasanPortfolio.git
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+## 📜 License
+
+This project is licensed under the MIT License.
