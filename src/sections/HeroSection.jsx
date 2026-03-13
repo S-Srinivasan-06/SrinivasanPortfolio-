@@ -55,45 +55,47 @@ export default function HeroSection() {
   const scrollIndicatorOpacity = useTransform(scrollYProgress, [0, 0.05], [1, 0])
 
   /* ---------------- PHASE 1 : THE RUNE SEQUENCE ---------------- */
-  const runeYellowScale = useTransform(scrollYProgress, [0, 0.3], [25, 1])
-  const runeYellowOpacity = useTransform(scrollYProgress, [0, 0.05, 0.4, 0.5], [0, 1, 1, 0])
+  // Slower, more atmospheric rune entry
+  const runeYellowScale = useTransform(scrollYProgress, [0, 0.4], [15, 1])
+  const runeYellowOpacity = useTransform(scrollYProgress, [0, 0.1, 0.45, 0.55], [0, 1, 1, 0])
 
-  const runePurpleScale = useTransform(scrollYProgress, [0.25, 0.45], [0.5, 3])
-  const runePurpleOpacity = useTransform(scrollYProgress, [0.25, 0.35, 0.45, 0.55], [0, 1, 1, 0])
+  const runePurpleScale = useTransform(scrollYProgress, [0.15, 0.5], [0.6, 2.8])
+  const runePurpleOpacity = useTransform(scrollYProgress, [0.15, 0.3, 0.5, 0.6], [0, 1, 1, 0])
 
-  const runeCoreOpacity = useTransform(scrollYProgress, [0.35, 0.45, 0.55], [0, 1, 0])
+  const runeCoreOpacity = useTransform(scrollYProgress, [0.3, 0.5, 0.6], [0, 1, 0])
 
   /* ---------------- PHASE 2 : ASYMMETRICAL GLOWING VEIL & CURTAIN SPLIT ---------------- */
 
-  // LEFT VEIL: White Core + PURPLE Glow
+  // Smoother transition for the glows
   const leftVeilGlow = useTransform(
     scrollYProgress,
-    [0.3, 0.45, 0.6],
+    [0.4, 0.6, 0.75],
     [
       'drop-shadow(0px 0 0px rgba(255,255,255,0)) drop-shadow(0px 0 0px rgba(123,44,191,0))',
-      'drop-shadow(2px 0 2px rgba(255,255,255,0.8)) drop-shadow(10px 0 20px rgba(123,44,191,0.6))',
-      'drop-shadow(3px 0 2px rgba(255,255,255,1)) drop-shadow(25px 0 50px rgba(123,44,191,1))'
+      'drop-shadow(2px 0 10px rgba(255,255,255,0.4)) drop-shadow(10px 0 30px rgba(123,44,191,0.5))',
+      'drop-shadow(4px 0 15px rgba(255,255,255,1)) drop-shadow(40px 0 80px rgba(123,44,191,1))'
     ]
   )
 
-  // RIGHT VEIL: White Core + GOLDEN Glow
   const rightVeilGlow = useTransform(
     scrollYProgress,
-    [0.3, 0.45, 0.6],
+    [0.4, 0.6, 0.75],
     [
       'drop-shadow(0px 0 0px rgba(255,255,255,0)) drop-shadow(0px 0 0px rgba(255,183,3,0))',
-      'drop-shadow(-2px 0 2px rgba(255,255,255,0.8)) drop-shadow(-10px 0 20px rgba(255,183,3,0.6))',
-      'drop-shadow(-3px 0 2px rgba(255,255,255,1)) drop-shadow(-25px 0 50px rgba(255,183,3,1))'
+      'drop-shadow(-2px 0 10px rgba(255,255,255,0.4)) drop-shadow(-10px 0 30px rgba(255,183,3,0.5))',
+      'drop-shadow(-4px 0 15px rgba(255,255,255,1)) drop-shadow(-40px 0 80px rgba(255,183,3,1))'
     ]
   )
 
-  const leftCurtainX = useTransform(scrollYProgress, [0.6, 0.95], ['0vw', '-100vw'])
-  const rightCurtainX = useTransform(scrollYProgress, [0.6, 0.95], ['0vw', '100vw'])
+  // Curtains start sliding later but with a longer duration for grace
+  const leftCurtainX = useTransform(scrollYProgress, [0.7, 0.98], ['0vw', '-100vw'])
+  const rightCurtainX = useTransform(scrollYProgress, [0.7, 0.98], ['0vw', '100vw'])
 
   /* ---------------- PHASE 3 : TEXT REVEAL ---------------- */
-  const textOpacity = useTransform(scrollYProgress, [0.6, 0.75], [0, 1])
-  const nameScale = useTransform(scrollYProgress, [0.6, 0.75], [0.95, 1])
-  const nameY = useTransform(scrollYProgress, [0.6, 0.75], [20, 0])
+  // Name reveals as the curtains reach 75% open state
+  const textOpacity = useTransform(scrollYProgress, [0.8, 0.92], [0, 1])
+  const nameScale = useTransform(scrollYProgress, [0.8, 0.95], [0.9, 1])
+  const nameY = useTransform(scrollYProgress, [0.8, 0.95], [40, 0])
 
   const curtainTerminalProps = {
     scale: 2.4,
